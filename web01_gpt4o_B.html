@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOTO's HTML Tutorial</title>
+    <style>
+        /* 기존 스타일 유지 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+        aside {
+            flex: 1;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+        aside ul li {
+            margin: 10px 0;
+        }
+        aside ul li a {
+            text-decoration: none;
+            color: #4CAF50;
+            cursor: pointer;
+        }
+        main {
+            flex: 3;
+            background-color: white;
+            padding: 20px;
+            margin-left: 20px;
+        }
+        .tutorial-header {
+            background-color: #d0f5d6;
+            padding: 15px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        .tutorial-header h1 {
+            margin: 0;
+        }
+        .try-it {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+        .try-it code {
+            display: block;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>TOTO's HTML Tutorial</h1>
+</header>
+
+<nav>
+    <a href="#">HTML BASIC</a>
+    <a href="#">HTML LINK</a>
+    <a href="#">CSS</a>
+    <a href="#">JavaScript</a>
+    <a href="#">TypeScript</a>
+</nav>
+
+<div class="container">
+    <aside>
+        <ul>
+            <li><a onclick="changeContent('htmlBasic')">HTML 기본</a></li>
+            <li><a onclick="changeContent('htmlTitle')">HTML TITLE</a></li>
+            <li><a onclick="changeContent('htmlPtag')">HTML PTAG</a></li>
+            <li><a onclick="changeContent('htmlImg')">HTML IMG</a></li>
+            <li><a onclick="changeContent('htmlAtag')">HTML ATAG 배우기</a></li>
+            <li><a onclick="changeContent('htmlVideoAudio')">HTML VIDEO/AUDIO</a></li>
+        </ul>
+    </aside>
+
+    <main id="main-content">
+        <div class="tutorial-header">
+            <h1>HTML Tutorial</h1>
+            <p>HTML is the standard markup language for Web pages. With HTML you can create your own Website.</p>
+            <button>Study our free HTML Tutorial »</button>
+        </div>
+
+        <section class="try-it">
+            <h2>Easy Learning with HTML "Try it Yourself"</h2>
+            <p>With our "Try it Yourself" editor, you can edit the HTML code and view the result:</p>
+            <div>
+                <code>
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html&gt;<br>
+                    &lt;body&gt;<br>
+                    &lt;h1&gt;This is a Heading&lt;/h1&gt;<br>
+                    &lt;p&gt;This is a paragraph.&lt;/p&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
+                </code>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script>
+    // 각 메뉴 항목을 클릭할 때마다 호출될 함수
+    function changeContent(content) {
+        var mainContent = document.getElementById('main-content');
+
+        if(content === 'htmlBasic') {
+            mainContent.innerHTML = `
+                <div class="tutorial-header">
+                    <h1>HTML 기본</h1>
+                    <p>HTML은 웹 페이지를 만들기 위한 표준 마크업 언어입니다.</p>
+                </div>
+                <section class="try-it">
+                    <h2>HTML 기본 코드</h2>
+                    <div>
+                        <code>
+                            &lt;!DOCTYPE html&gt;<br>
+                            &lt;html&gt;<br>
+                            &lt;body&gt;<br>
+                            &lt;h1&gt;HTML 기본 제목&lt;/h1&gt;<br>
+                            &lt;p&gt;이것은 기본적인 HTML 문장입니다.&lt;/p&gt;<br>
+                            &lt;/body&gt;<br>
+                            &lt;/html&gt;
+                        </code>
+                    </div>
+                </section>`;
+        } else if(content === 'htmlTitle') {
+            mainContent.innerHTML = `
+                <div class="tutorial-header">
+                    <h1>HTML TITLE</h1>
+                    <p>HTML의 TITLE 태그는 페이지의 제목을 설정합니다.</p>
+                </div>
+                <section class="try-it">
+                    <h2>HTML TITLE 태그 코드</h2>
+                    <div>
+                        <code>
+                            &lt;html&gt;<br>
+                            &lt;head&gt;<br>
+                            &lt;title&gt;제목 설정&lt;/title&gt;<br>
+                            &lt;/head&gt;<br>
+                            &lt;body&gt;<br>
+                            &lt;/body&gt;<br>
+                            &lt;/html&gt;
+                        </code>
+                    </div>
+                </section>`;
+        } else if(content === 'htmlPtag') {
+            mainContent.innerHTML = `
+                <div class="tutorial-header">
+                    <h1>HTML PTAG</h1>
+                    <p>HTML의 p 태그는 단락을 표시하는 데 사용됩니다.</p>
+                </div>
+                <section class="try-it">
+                    <h2>HTML P 태그 코드</h2>
+                    <div>
+                        <code>
+                            &lt;p&gt;이것은 단락입니다.&lt;/p&gt;
+                        </code>
+                    </div>
+                </section>`;
+        } else if(content === 'htmlImg') {
+            mainContent.innerHTML = `
+                <div class="tutorial-header">
+                    <h1>HTML IMG</h1>
+                    <p>HTML의 img 태그는 이미지를 삽입하는 데 사용됩니다.</p>
+                </div>
+                <section class="try-it">
+                    <h2>HTML IMG 태그 코드</h2>
+                    <div>
+                        <code>
+                            &lt;img src="image.jpg" alt="이미지 설명"&gt;
+                        </code>
+                    </div>
+                    <p>예시 이미지:</p>
+                    <img src="https://via.placeholder.com/150" alt="Example Image">
+                </section>`;
+        } else if(content === 'htmlAtag') {
+            mainContent.innerHTML = `
+                <div class="tutorial-header">
+                    <h1>HTML ATAG 배우기</h1>
+                    <p>HTML의 a 태그는 하이퍼링크를 만드는 데 사용됩니다.</p>
+                </div>
+                <section class="try-it">
+                    <h2>HTML A 태그 코드</h2>
+                    <div>
+                        <code>
+                            &lt;a href="https://www.example.com"&gt;이 링크를 클릭하세요&lt;/a&gt;
+                        </code>
+                    </div>
+                    <p>예시 링크: <a href="https://www.example.com" target="_blank">이 링크를 클릭하세요</a></p>
+                </section>`;
+        } else if(content === 'htmlVideoAudio') {
+            mainContent.innerHTML = `
+                <div class="tutorial-header">
+                    <h1>HTML VIDEO/AUDIO</h1>
+                    <p>HTML에서 video 및 audio 태그는 미디어 파일을 삽입하는 데 사용됩니다.</p>
+                </div>
+                <section class="try-it">
+                    <h2>HTML VIDEO 태그 코드</h2>
+                    <div>
+                        <code>
+                            &lt;video width="320" height="240" controls&gt;<br>
+                            &nbsp;&nbsp;&lt;source src="movie.mp4" type="video/mp4"&gt;<br>
+                            &lt;/video&gt;
+                        </code>
+                    </div>
+                    <p>예시 비디오:</p>
+                    <video width="320" height="240" controls>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    </video>
+                    <h2>HTML AUDIO 태그 코드</h2>
+                    <div>
+                        <code>
+                            &lt;audio controls&gt;<br>
+                            &nbsp;&nbsp;&lt;source src="audio.mp3" type="audio/mpeg"&gt;<br>
+                            &lt;/audio&gt;
+                        </code>
+                    </div>
+                    <p>예시 오디오:</p>
+                    <audio controls>
+                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                    </audio>
+                </section>`;
+        }
+    }
+</script>
+
+</body>
+</html>
